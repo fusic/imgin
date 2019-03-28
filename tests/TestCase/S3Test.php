@@ -2,15 +2,15 @@
 require TEST_APP . '/TestConfig.php';
 require TEST_APP . '/ImginS3Source.php';
 
-use PHPUnit\Framework\TestCase;
 use Aws\S3\S3Client;
+use PHPUnit\Framework\TestCase;
 
 class S3Test extends TestCase
 {
     private $client = null;
     private $source = null;
 
-    public function setUp() :void
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -19,8 +19,8 @@ class S3Test extends TestCase
             'version' => 'latest',
             'credentials' => [
                 'key' => TestConfig::ACCESS_KEY_ID,
-                'secret'  => TestConfig::SECRET_ACCESS_KEY,
-            ]
+                'secret' => TestConfig::SECRET_ACCESS_KEY,
+            ],
         ];
 
         $this->$client = S3Client::factory($s3Config);
@@ -69,9 +69,9 @@ class S3Test extends TestCase
 
         $this->$source->getPath($s3ImgKey);
 
-        $this->assertTrue(file_exists($expectedCacheDir.$s3ImgKey)); // 無いと思うけど、windows上でテスト走らせたら失敗するはず
+        $this->assertTrue(file_exists($expectedCacheDir . $s3ImgKey)); // 無いと思うけど、windows上でテスト走らせたら失敗するはず
 
         // 後片付け
-        unlink($expectedCacheDir.$s3ImgKey);
+        unlink($expectedCacheDir . $s3ImgKey);
     }
 }
