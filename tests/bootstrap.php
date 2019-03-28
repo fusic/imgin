@@ -12,4 +12,6 @@ if (!defined('IMGIN_DIR_MODE')) {
  if (!defined('IMGIN_CACHE_DIR')) {
     define('IMGIN_CACHE_DIR', '/tmp/imgincache');
  }
-
+ if (!defined('DS')) {
+   define('DS', DIRECTORY_SEPARATOR);
+}
