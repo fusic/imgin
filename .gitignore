@@ -3,3 +3,4 @@ vendor/
 .phpunit.result.cache
 tests/TestConfig.php
 tests/tmp/*
+composer.phar
