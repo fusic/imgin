@@ -54,7 +54,6 @@ class ImginS3Source implements ImginSource
 
             return $path;
         } catch (Exception $e) {
-            var_dump($e->getMessage());
             unlink($path);
             error_log($e->getMessage(), 0);
 
