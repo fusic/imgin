@@ -34,8 +34,17 @@ class S3Test extends TestCase
 
     public function test_createObject()
     {
-        $result = $this->$source->createObject('test-img.png', './tests/tmp/test-img.png');
+        $s3ImgKey = 'test-img.png';
+        $saveAs = TEST_APP . '/tmp/test-img.png';
 
-        $this->assertTrue(true);
+        $this->$source->createObject($s3ImgKey, $saveAs);
+
+        $this->assertTrue(file_exists($saveAs), 'ファイルを保存できているか');
+        $this->assertTrue(mime_content_type($saveAs) === 'image/png', '画像ファイルか');
+        $savedPerm = substr(sprintf('%o', fileperms($saveAs)), -4);
+        $this->assertTrue($savedPerm === '0644', 'パーミッション');
+
+        // 後片付け
+        unlink($saveAs);
     }
 }
