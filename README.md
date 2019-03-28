@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-$ composer -sdev create-project k1low/imgin ./app/webroot/img
+$ composer -sdev create-project fusic/imgin ./app/webroot/img
 ...
 
 Writing lock file
