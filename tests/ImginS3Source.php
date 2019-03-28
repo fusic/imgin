@@ -61,3 +61,17 @@ class ImginS3Source implements ImginSource
         }
     }
 }
+
+function mkdirWithDirmode($path)
+{
+    $dirmode = 0755;
+    if (defined('IMGIN_DIR_MODE')) {
+        $dirmode = IMGIN_DIR_MODE;
+    }
+    $mask = umask();
+    umask(000);
+    $result = mkdir($path, $dirmode, true);
+    umask($mask);
+
+    return $result;
+}
