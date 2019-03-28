@@ -75,3 +75,12 @@ function mkdirWithDirmode($path)
 
     return $result;
 }
+
+function cleardir($dir)
+{
+    if (is_dir($dir) && !is_link($dir)) {
+        array_map('cleardir',   glob($dir.DS.'*', GLOB_ONLYDIR));
+        array_map('unlink', glob($dir.DS.'*'));
+        rmdir($dir);
+    }
+}
