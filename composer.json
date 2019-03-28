@@ -16,7 +16,7 @@
         "composer/installers": "*",
         "imagine/imagine": "*",
         "nategood/commando": "*",
-        "aws/aws-sdk-php": "2.*",
+        "aws/aws-sdk-php": "3.*",
         "doctrine/cache": "1.*"
     },
     "require-dev": {
