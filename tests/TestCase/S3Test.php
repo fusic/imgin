@@ -1,7 +1,8 @@
 <?php
-require TEST_APP . '/TestConfig.php';
-require TEST_APP . '/../ImginS3Source.php';
+namespace App\Tests\TestCase;
 
+use App\Tests\TestConfig;
+use App\ImginS3Source;
 use Aws\S3\S3Client;
 use PHPUnit\Framework\TestCase;
 

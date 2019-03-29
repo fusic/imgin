@@ -8,8 +8,6 @@
  * - /100x80/
  */
 require dirname(__FILE__) . '/vendor/autoload.php';
-require __DIR__ . 'ImginS3Source.php';
-require __DIR__ . 'util.php';
 
 $rootPath = dirname(__FILE__);
 
