@@ -2,13 +2,8 @@
 namespace App;
 
 use App\Util;
+use App\ImginSource;
 use Aws\S3\S3Client;
-
-interface ImginSource
-{
-    public function getType();
-    public function getPath($key);
-}
 
 class ImginS3Source implements ImginSource
 {

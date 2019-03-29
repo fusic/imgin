@@ -17,30 +17,6 @@ if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
 }
 
-interface ImginSource
-{
-    public function getType();
-    public function getPath($key);
-}
-
-// File
-class ImginFileSource implements ImginSource
-{
-    private $rootPath;
-    public function __construct($rootPath)
-    {
-        $this->rootPath = $rootPath;
-    }
-    public function getType()
-    {
-        return 'File';
-    }
-    public function getPath($key)
-    {
-        return $this->rootPath . DS . $key;
-    }
-}
-
 // Load config.php
 require dirname(__FILE__) . '/config.php';
 
