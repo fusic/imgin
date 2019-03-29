@@ -4,6 +4,7 @@
 
 ```sh
 $ composer -sdev create-project fusic/imgin ./app/webroot/img
+$ chmod 777 ./app/webroot/img
 ...
 
 Writing lock file
