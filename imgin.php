@@ -8,8 +8,6 @@
  * - /100x80/
  */
 require dirname(__FILE__) . '/vendor/autoload.php';
-require __DIR__ . 'ImginS3Source.php';
-require __DIR__ . 'util.php';
 
 $rootPath = dirname(__FILE__);
 
@@ -17,30 +15,6 @@ $dirRegex = '(\d+)x(\d+)(-[^/]+)?';
 
 if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
-}
-
-interface ImginSource
-{
-    public function getType();
-    public function getPath($key);
-}
-
-// File
-class ImginFileSource implements ImginSource
-{
-    private $rootPath;
-    public function __construct($rootPath)
-    {
-        $this->rootPath = $rootPath;
-    }
-    public function getType()
-    {
-        return 'File';
-    }
-    public function getPath($key)
-    {
-        return $this->rootPath . DS . $key;
-    }
 }
 
 // Load config.php

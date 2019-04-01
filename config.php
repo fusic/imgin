@@ -1,4 +1,5 @@
 <?php
+
 /*
   Imgin configs
 

@@ -1,4 +1,6 @@
 <?php
+require_once "vendor/autoload.php";
+
 const TEST_APP = __DIR__;
 
 $_SERVER['PHP_SELF'] = '/';
