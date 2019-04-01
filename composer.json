@@ -13,11 +13,11 @@
     ],
     "require": {
         "php": ">=5.3.2",
-        "composer/installers": "*",
+        "composer/installers": "v1.0.21",
         "imagine/imagine": "*",
-        "nategood/commando": "*",
+        "nategood/commando": "0.2.7",
         "aws/aws-sdk-php": "3.*",
-        "doctrine/cache": "1.*"
+        "doctrine/cache": "1.4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0"
