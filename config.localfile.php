@@ -30,17 +30,3 @@ $allowCachePattern = array(
 // ImginSource
 // File
 $source = new ImginFileSource($rootPath);
-
-/*
-// S3
-$s3Config = [
-    'region' => YOUR_REGION,
-    'version' => 'latest',
-    'credentials' => [
-        'key' => YOUR_ACCESS_KEY_ID,
-        'secret'  => YOUR_SECRET_ACCESS_KEY,
-    ]
-];
-
-$this->client = S3Client::factory($s3Config);
-*/
