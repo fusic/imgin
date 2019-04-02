@@ -1,5 +1,8 @@
 <?php
 
+use App\ImginS3Source;
+use Aws\S3\S3Client;
+
 /*
   Imgin configs
 
@@ -38,3 +41,4 @@ $s3Config = [
 ];
 
 $this->client = S3Client::factory($s3Config);
+$this->source = new ImginS3Source($this->client);
