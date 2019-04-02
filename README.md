@@ -4,15 +4,19 @@
 
 ```sh
 $ composer -sdev create-project fusic/imgin ./app/webroot/img
-$ chmod 777 ./app/webroot/img
 ...
 
 Writing lock file
 Generating autoload files
 Do you want to remove the existing VCS (.git, .svn..) history? [Y,n]? Y
+$ chmod 777 ./app/webroot/img
 ```
 
 ## Usage (File)
+
+```sh
+$ cp config.localfile.php config.php
+```
 
 ### Original image access
 
@@ -34,7 +38,14 @@ $ php app/webroot/img/imgin.php clearcache /path/to/app/webroot/img/foo/bar/larg
 $ php app/webroot/img/imgin.php clearcache --all
 ```
 
+
 ## Usage (S3)
+
+```sh
+$ cp config.s3.php config.php
+```
+
+Please edit the aws authentication information in config.php according to your environment.
 
 ### Original image
 

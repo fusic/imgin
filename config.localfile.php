@@ -42,5 +42,5 @@ $s3Config = [
     ]
 ];
 
-$this->$client = S3Client::factory($s3Config);
+$this->client = S3Client::factory($s3Config);
 */
