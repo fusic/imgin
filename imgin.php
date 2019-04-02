@@ -1,5 +1,7 @@
 <?php
 
+use App\Util;
+
 /**
  * imgin
  *
@@ -56,7 +58,7 @@ if (php_sapi_name() == 'cli') {
         if ($imgin['all']) {
             foreach (glob($rootPath . DS . '*', GLOB_ONLYDIR) as $dirname) {
                 if (preg_match('#/' . $dirRegex . '$#', $dirname)) {
-                    cleardir($dirname);
+                    Util::cleardir($dirname);
                 }
             }
 
@@ -145,7 +147,7 @@ try {
         if (defined('IMGIN_DIR_MODE')) {
             $dirmode = IMGIN_DIR_MODE;
         }
-        $result = mkdirWithDirmode(dirname($resizedImagePath), $dirmode, true);
+        $result = Util::mkdirWithDirmode(dirname($resizedImagePath), $dirmode, true);
         if (!$result) {
             throw new OutOfBoundsException('Directory permission denied');
         }

@@ -5,3 +5,4 @@ tests/TestConfig.php
 tests/tmp/*
 composer.phar
 composer.lock
+config.php

@@ -24,13 +24,13 @@ class S3Test extends TestCase
             ],
         ];
 
-        $this->$client = S3Client::factory($s3Config);
-        $this->$source = new ImginS3Source($this->$client, 'imgin-test-fusic');
+        $this->client = S3Client::factory($s3Config);
+        $this->source = new ImginS3Source($this->client, 'imgin-test-fusic');
     }
 
     public function test_getType()
     {
-        $this->assertEquals('S3', $this->$source->getType());
+        $this->assertEquals('S3', $this->source->getType());
     }
 
     /**
@@ -45,7 +45,7 @@ class S3Test extends TestCase
         $s3ImgKey = 'test-img.png';
         $saveAs = TEST_APP . '/tmp/test-img.png';
 
-        $this->$source->createObject($s3ImgKey, $saveAs);
+        $this->source->createObject($s3ImgKey, $saveAs);
 
         $this->assertTrue(file_exists($saveAs), 'ファイルを保存できているか');
         $this->assertTrue(mime_content_type($saveAs) === 'image/png', '画像ファイルか');
@@ -68,7 +68,7 @@ class S3Test extends TestCase
         $expectedCacheDir = '/tmp/imgincache/';
         $s3ImgKey = 'test-img.png';
 
-        $this->$source->getPath($s3ImgKey);
+        $this->source->getPath($s3ImgKey);
 
         $this->assertTrue(file_exists($expectedCacheDir . $s3ImgKey)); // 無いと思うけど、windows上でテスト走らせたら失敗するはず
 

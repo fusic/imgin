@@ -1,5 +1,8 @@
 <?php
 
+use App\ImginS3Source;
+use Aws\S3\S3Client;
+
 /*
   Imgin configs
 
@@ -27,20 +30,15 @@ $allowCachePattern = array(
     // '140x100',
 );
 
-// ImginSource
-// File
-$source = new ImginFileSource($rootPath);
-
-/*
 // S3
 $s3Config = [
-    'region' => TestConfig::REGION,
+    'region' => 'YOUR_REGION',
     'version' => 'latest',
     'credentials' => [
-        'key' => TestConfig::ACCESS_KEY_ID,
-        'secret'  => TestConfig::SECRET_ACCESS_KEY,
+        'key' => 'YOUR_ACCESS_KEY_ID',
+        'secret'  => 'YOUR_SECRET_ACCESS_KEY',
     ]
 ];
 
-$this->$client = S3Client::factory($s3Config);
-*/
+$this->client = S3Client::factory($s3Config);
+$this->source = new ImginS3Source($this->client);
