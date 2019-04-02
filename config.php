@@ -34,11 +34,11 @@ $source = new ImginFileSource($rootPath);
 /*
 // S3
 $s3Config = [
-    'region' => TestConfig::REGION,
+    'region' => YOUR_REGION,
     'version' => 'latest',
     'credentials' => [
-        'key' => TestConfig::ACCESS_KEY_ID,
-        'secret'  => TestConfig::SECRET_ACCESS_KEY,
+        'key' => YOUR_ACCESS_KEY_ID,
+        'secret'  => YOUR_SECRET_ACCESS_KEY,
     ]
 ];
 
